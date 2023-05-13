@@ -152,13 +152,29 @@ int SpreadSheet::getCol() const
     return m_cells[0].size();
 }
 
-void test()
+void testCell()
 {
+    std::cout << "Test Cell\n";
     Cell c;
     c.setValue(24);
 
-    std::cout << "c val == "<< c.toInt() <<std::endl;
+    std::cout << "c == "<< c << std::endl;
+    std::cout << "c.toInt() -> " << c.toInt() << std::endl;
+    std::cout << "c.toDouble() -> " << c.toDouble() << std::endl;
+    std::cout << "c.toString() -> " << c.toString() << std::endl;
 
+    Cell c1;
+    c1.setValue("v");
+
+    std::cout << "c == "<< c1 << std::endl;
+    //std::cout << "c.toInt() -> " << c1.toInt() << std::endl;
+    //std::cout << "c.toDouble() -> " << c1.toDouble() << std::endl;
+    std::cout << "c.toString() -> " << c1.toString() << std::endl;
+}
+
+void testSpreadSheet()
+{
+    std::cout << "\nTest SpreadSheet\n";
     SpreadSheet s1(2,2);
     s1.setCellAt(0,1,"10");
 
@@ -176,9 +192,16 @@ void test()
     SpreadSheet s2;
     std::cout << "s2 col " << s2.getCol() << std::endl;
     std::cout << "s2 row " << s2.getRow() << std::endl;
+
+    Cell c;
+    c.setValue(50);
+    SpreadSheet s3(3, 5);
+    s3.setCellAt(1, 2, c);
+    std::cout << s3.getCellAt(1,2) << std::endl;
 }
 
 int main()
 {
-    test();
+    testCell();
+    testSpreadSheet();
 }
