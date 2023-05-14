@@ -27,17 +27,25 @@ void testSpreadSheet()
     std::cout << "\nTest SpreadSheet\n";
     SpreadSheet s1(2,2);
     s1.setCellAt(0,1,"10");
+    s1.setCellAt(0,0, "k");
+    s1.setCellAt(1,1,"j");
 
     std::cout << "s1(0,1) == "<< s1.getCellAt(0,1).toInt() << std::endl;
     std::cout << "s1 row " << s1.getRow() << std::endl;
     s1.addRow(3);
     std::cout << "s1 row " << s1.getRow() << std::endl;
+    s1.setCellAt(2,1,"v");
 
-    s1.addRow(3);
-    std::cout << "s1 row " << s1.getRow() << std::endl;
-
-    s1.addCol(5);
+    s1.addCol(1);
     std::cout << "s1 col " << s1.getCol() << std::endl;
+
+    s1.print();
+
+    s1.removeRow(2);
+    s1.print();
+
+    s1.removeCol(1);
+    s1.print();
 
     SpreadSheet s2;
     std::cout << "s2 col " << s2.getCol() << std::endl;

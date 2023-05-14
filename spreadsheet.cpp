@@ -54,3 +54,36 @@ int SpreadSheet::getCol() const
 {
     return m_cells[0].size();
 }
+
+void SpreadSheet::print() 
+{
+    std::cout << "\nPrint\n";
+    for (int i = 0; i < m_cells.size(); ++i) {
+        for (int j = 0; j < m_cells[0].size(); ++j) {
+            std::cout << m_cells[i][j] << " ";
+        }
+        std::cout << std::endl;
+    }
+    std::cout << std::endl;
+}
+
+void SpreadSheet::removeRow(int row) 
+{
+    if (row < 0 || row >= m_cells.size()) {
+        throw std::out_of_range("Row index out of range");
+    }
+    m_cells.erase(m_cells.begin() + row);
+}
+
+void SpreadSheet::removeCol(int col)
+{
+    if (col < 0 || col >= m_cells[0].size()) {
+        throw std::out_of_range("Col index out of range");
+    }
+
+    for (int i = 0; i < m_cells.size(); i++) {
+        m_cells[i].erase(m_cells[i].begin() + col);
+    }
+    
+    m_cells.erase(m_cells.begin() + col);
+}

@@ -7,7 +7,7 @@ class Cell
 public:
     Cell()
     {
-        m_value = "";
+        m_value = "0";
     }
 
     ~Cell() = default;

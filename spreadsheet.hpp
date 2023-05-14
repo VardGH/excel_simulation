@@ -27,8 +27,13 @@ public:
     int getCol() const;
 
     //
-    void addRow(int);
-    void addCol(int);
+    void addRow(int row);
+    void addCol(int col);
+
+    void removeRow(int row);
+    void removeCol(int col);
+
+    void print();
 
 private:
     std::vector<std::vector<Cell>> m_cells;
