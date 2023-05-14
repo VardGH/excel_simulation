@@ -1,13 +1,14 @@
-#ifndef CELL_H
-#define CELL_H
+#ifndef CELL_HPP
+#define CELL_HPP
+
 #include <string>
 
 class Cell
 {
 public:
-    Cell()
+    Cell() 
+        : m_value("0")
     {
-        m_value = "0";
     }
 
     ~Cell() = default;
@@ -30,4 +31,4 @@ private:
     std::string m_value;
 };
 
-#endif  //CELL_H
+#endif  //CELL_HPP

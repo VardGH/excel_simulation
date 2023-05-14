@@ -1,5 +1,5 @@
-#ifndef SPREADSHEET_H
-#define SPREADSHEET_H
+#ifndef SPREADSHEET_HPP
+#define SPREADSHEET_HPP
 #include <vector>
 #include <string>
 #include "cell.hpp"
@@ -38,4 +38,4 @@ public:
 private:
     std::vector<std::vector<Cell>> m_cells;
 };
-#endif  //SPREADSHEET_H
+#endif  //SPREADSHEET_HPP
